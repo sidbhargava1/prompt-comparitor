@@ -1,0 +1,7 @@
+# requirements.txt
+openai>=1.12.0
+tiktoken>=0.5.2
+tenacity>=8.2.3
+python-dotenv>=1.0.1
+# Optional: for faster diffs/processing in future expansions
+rapidfuzz>=3.9.3
