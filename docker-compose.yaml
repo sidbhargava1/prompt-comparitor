@@ -1,0 +1,20 @@
+# docker-compose.yml
+version: "3.9"
+
+services:
+  prompt-comparator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY}
+      MODEL: gpt-4o-mini
+      JUDGE_MODEL: gpt-4o-mini
+      TEMPERATURE: "0.0"
+      SEED: "42"
+    # If you want to run a custom command instead of the demo, override entrypoint/cmd:
+    # command: python prompt_comparator_gpt.py
+    # Example: mount local prompts/outputs later for batch processing
+    # volumes:
+    #   - ./data:/app/data:ro
+    restart: on-failure
